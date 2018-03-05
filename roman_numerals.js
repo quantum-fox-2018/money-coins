@@ -1,5 +1,39 @@
 function convertToCoin (money) {
   // your implementation code here
+  let obj = [{
+    coin: 1,
+  },{
+    coin: 10,
+  },{
+    coin: 20,
+  },{
+    coin: 50,
+  },{
+    coin: 100,
+  },{
+    coin: 200,
+  },{
+    coin: 500,
+  },{
+    coin: 1000,
+  },{
+    coin: 2000,
+  },{
+    coin: 5000,
+  },{
+    coin: 10000,
+  }]
+
+  let arrCoin = []
+  for(let i= obj.length-1; i >= 0; i--) {
+    if(money - obj[i].coin >= 0) {
+      money -= obj[i].coin;
+      arrCoin.push(obj[i].coin);
+      i++;
+    }
+  }
+  return arrCoin
+
 }
 
 // Drive code
