@@ -1,5 +1,16 @@
 function convertToCoin (money) {
-  // your implementation code here
+  let coins = [10000, 5000, 2000, 500, 200, 50, 20, 1];
+  
+  let getCoins = []
+  for(let i=0; i<coins.length; i++){
+    if(money >= coins[i]){
+      getCoins.push(coins[i])
+      money -= coins[i]
+      i--;
+    }
+  }
+  return getCoins;
+  // return getCoins;
 }
 
 // Drive code
