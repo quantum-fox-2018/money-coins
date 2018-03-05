@@ -1,5 +1,19 @@
 function convertToCoin (money) {
   // your implementation code here
+  let pecahan = [10000, 5000, 2000, 1000, 500, 200, 100, 50, 20, 10, 1];
+  let arr = [];
+
+  while(money) {
+    for(let i = 0; i < pecahan.length; i++) {
+      if(money >= pecahan[i]) {
+        arr.push(pecahan[i]);
+        money-=pecahan[i];
+        break;
+      }
+    }
+  }
+
+  return arr;
 }
 
 // Drive code
