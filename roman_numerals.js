@@ -1,5 +1,19 @@
 function convertToCoin (money) {
-  // your implementation code here
+  var koinPecahan = [1, 10, 20, 50, 100, 200, 500, 1000, 2000, 5000, 10000];
+  var arrayHasil = [];
+
+    while (money >= 0) {
+      // if (money != 0) {
+      for (var i = koinPecahan.length; i >= 0; i--) {
+        var koin = koinPecahan[i];
+        while (money >= koin) {
+          money -= koinPecahan[i]
+          arrayHasil.push(koin)
+      // }
+      }
+    }
+  return arrayHasil
+  }
 }
 
 // Drive code
