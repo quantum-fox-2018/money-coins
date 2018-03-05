@@ -1,5 +1,19 @@
 function convertToCoin (money) {
   // your implementation code here
+  var coins = [10000, 5000, 2000, 1000, 500, 200, 100, 50, 20, 10, 1];
+
+  var result = [];
+
+  while(money>0){
+    for(var counter = 0; counter<coins.length; counter++){
+      if(money >= coins[counter]){
+        result.push(coins[counter]);
+        money = money - coins[counter];
+        break;
+      }    
+    }
+  }
+  return result;
 }
 
 // Drive code
