@@ -1,13 +1,24 @@
 function convertToCoin (money) {
   // your implementation code here
-  let count = [10000, 5000, 2000, 1000, 500, 200, 100, 50, 20, 10, 1]
+  let coin = [[10000,0], [5000,10], [2000,3], [1000,1], [500,0], [200,4], [100,1], [50,1], [20,2], [10,2], [1,10]]
   let result = []
+  let stock = 0
 
-  for(let i=0; i<count.length; i++){
-    while(money - count[i] >= 0){
-      money = money - count[i]
-      result.push(count[i])
+  for(let i=0; i<coin.length; i++){
+    
+    while(money - coin[i][0] >= 0 && coin[i][1] > 0){
+      // stock = coin[i][1]
+      money = money - coin[i][0]
+      coin[i][1] --
+      stock ++
     }
+    if(stock !== 0){
+
+      for(let j=0; j<stock; j++){
+        result.push(coin[i][0])
+      }
+    }
+    stock = 0
   }
   return result
 }
